@@ -4,17 +4,13 @@ function fetchAllRooms() {
     return fetch(roomUrl).then(response => response.json());
 }
 
-/* const prom = fetchAllRooms();
-    prom.then(createRoomsMap);
-*/
-
 function callFetchAllKommuner(btn) {
-    const prom = fetchAllKommuner();
-    prom.then(createKommuneMap);
+    const prom = fetchAllRooms();
+    prom.then(createRoomMap);
 }
 
 let roomMap = new Map();
-function createRoomMap(data) {
+function createKommuneMap(data) {
     out("start create room")
     data.forEach(kom => {
         out(data);
@@ -30,3 +26,6 @@ function showKommuneMap() {
 
 const pbGetKommuner = document.querySelector(".pbGet");
 const pbShowMap = document.querySelector(".pbShowKomMap");
+
+pbGetKommuner.addEventListener("click", callFetchAllKommuner);
+pbShowMap.addEventListener("click", showKommuneMap);
