@@ -8,8 +8,9 @@ function fetchAllRooms() {
     prom.then(createRoomsMap);
 */
 
-function callFetchAllRooms(btn) {
-
+function callFetchAllKommuner(btn) {
+    const prom = fetchAllKommuner();
+    prom.then(createKommuneMap);
 }
 
 let roomMap = new Map();
@@ -17,7 +18,7 @@ function createRoomMap(data) {
     out("start create room")
     data.forEach(kom => {
         out(data);
-        roomMap.set(kom.kommuneNavn, kom);
+        roomMap.set(kom.roomNavn, kom);
     })
 }
 
