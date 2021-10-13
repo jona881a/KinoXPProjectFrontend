@@ -11,7 +11,7 @@ function fetchMoviesFromDB() {
     promise.then(data =>{ //Vi reagere på dataen der kommer fra vores RESTapi
         data.forEach(movie => { //Vi hiver hver movie ud af promiseobjektet
             moviesMap.set(movie.movieID,movie);
-            showMoviesMap();
+            console.log(getMovie(2));
         })
     })
 } //fetching movies from database
@@ -20,6 +20,10 @@ function showMoviesMap() {
     for (const movieKey of moviesMap.keys()) {
         console.log(moviesMap.get(movieKey));
     }
+}
+
+function getMovie(movieid) {
+    return moviesMap.get(movieid);
 }
 
 //Eventlisteners
