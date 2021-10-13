@@ -1,31 +1,22 @@
-const roomUrl = "http://localhost:8080/kommuneregid/1081";
 
-function fetchAllRooms() {
-    return fetch(roomUrl).then(response => response.json());
-}
 
-function callFetchAllKommuner(btn) {
-    const prom = fetchAllRooms();
-    prom.then(createRoomMap);
-}
+//URL til controlleren i backenden som henter alle rooms i JSON format
+const urlRooms = "http://localhost:8080/rooms";
 
-let roomMap = new Map();
-function createKommuneMap(data) {
-    out("start create room")
-    data.forEach(kom => {
-        out(data);
-        roomMap.set(kom.roomNavn, kom);
+//Query for knappen som aktivere vores request til databasen
+const pbGetRooms = document.querySelector(".pbGetRooms");
+const RoomsMap = new Map(); //map der holder alle movies så de kan findes frem på deres keys
+
+function fetchRoomsFromDB() {
+    //Henter alt i moviestabellen og laver det til et promiseobject
+    const promise = fetch(urlRooms).then(response => response.json());
+    promise.then(data =>{ //Vi reagere på dataen der kommer fra vores RESTapi
+        data.forEach(Room => { //Vi hiver hver movie ud af promiseobjektet
+            console.log(Room);
+        })
     })
-}
+} //fetching movies from database
 
-function showKommuneMap() {
-    for (const komKey of kommuneMap.keys()) {
-        out(kommuneMap.get(komKey));
-    }
-}
+//Eventlisteners
+pbGetRooms.addEventListener('click',fetchRoomsFromDB);
 
-const pbGetKommuner = document.querySelector(".pbGet");
-const pbShowMap = document.querySelector(".pbShowKomMap");
-
-pbGetKommuner.addEventListener("click", callFetchAllKommuner);
-pbShowMap.addEventListener("click", showKommuneMap);
