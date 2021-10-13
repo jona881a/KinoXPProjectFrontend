@@ -10,43 +10,17 @@ function fetchMoviesFromDB() {
     const promise = fetch(urlMovies).then(response => response.json());
     promise.then(data =>{ //Vi reagere på dataen der kommer fra vores RESTapi
         data.forEach(movie => { //Vi hiver hver movie ud af promiseobjektet
-            console.log(movie);
+            moviesMap.set(movie.movieID,movie);
+            showMoviesMap();
         })
     })
 } //fetching movies from database
 
-//Eventlisteners
-pbGetMovies.addEventListener('click',fetchMoviesFromDB);
-
-
-/*
-function fetchAllRegioner() {
-    return fetch(regionUrl).then(response => response.json());
-}
-
-function actionFetchAllRegioner(btn) {
-    const prom = fetchAllRegioner();
-    prom.then(createRegionMap);
-}
-
-let regionMap = new Map();
-function createRegionMap(data) {
-    out("start create region")
-    data.forEach(region => {
-        out(region);
-        regionMap.set(region.regionKode, region);
-    })
-}
-
-function showRegionMap() {
-    for (const regionKey of regionMap.keys()) {
-        out(regionMap.get(regionKey));
+function showMoviesMap() {
+    for (const movieKey of moviesMap.keys()) {
+        console.log(moviesMap.get(movieKey));
     }
 }
 
-actionFetchAllRegioner("ehj");
-
-const pbShowRegionMap = document.querySelector(".pbShowRegionMap");
-pbShowRegionMap.addEventListener("click", showRegionMap);
-
-*/
+//Eventlisteners
+pbGetMovies.addEventListener('click',fetchMoviesFromDB);
