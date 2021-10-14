@@ -11,8 +11,8 @@ const moviesMap = new Map(); //map der holder alle movies så de kan findes frem
     promise.then(data =>{ //Vi reagere på dataen der kommer fra vores RESTapi
         data.forEach(movie => { //Vi hiver hver movie ud af promiseobjektet
             moviesMap.set(movie.movieID,movie);
-            console.log(getMovie(2));
         })
+        showMoviesMap();
     })
  //fetching movies from database
 

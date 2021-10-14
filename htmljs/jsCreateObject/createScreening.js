@@ -1,10 +1,10 @@
 
-
+showMoviesMap();
 
 createMovieSelector();
 
 function createMovieSelector(){
-   const movieSelector = document.querySelector(".moviedropdown");
+   const movieSelector = document.getElementById("moviedropdown");
    moviesMap.forEach(movie => {
        const optionTags = document.createElement("option");
        optionTags.textContent = movie.movieName;
@@ -15,8 +15,8 @@ function createMovieSelector(){
            const optionIndex = movieSelector.selectedIndex;
            const chosenOption = movieSelector.options[optionIndex];
 
-
        })
+
        })
 }
 
