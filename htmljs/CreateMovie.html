@@ -6,5 +6,58 @@
 </head>
 <body>
 
+<header>
+    <img class="logo" src="/css/img/NordicMotorhomeLogo.png" height="70" width="170"/>
+    <div class="container">
+
+        <nav class="nav">
+            <ul>
+                <li><a href="/screenings">Screenings</a></li>
+                <li><a href="/movies">Movies</a></li>
+                <li><a href="/rooms">Rooms</a></li>
+                <li><a href="/history">History</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="form-container">
+    <form id=assign action="/moviesCreate" method="post">
+
+        <div class="screeningID">
+
+        </div>
+
+        <label>* Enter startdate- and time (DD:MM:YYYY, HH:MM)</label>
+        <input type="number" name="movieStartDate" required>
+
+        <label>* Choose (available) movies shown during screening</label>
+        <select class="moviedropdown" required></select>
+
+        <div class="Age restriction">
+
+        </div>
+
+        <label>* Choose room</label>
+        <select class="roomdropdown" required></select>
+
+        <label>* Enter price pr. seat (without kr.)</label>
+        <input type="number" name="pricePrSeat" required>
+
+        <input type="submit" value="Create">
+
+        <!--<input type="" value="Cancel">-->
+
+        <div class="container">
+            <nav class="cancelBtn">
+                <ul>
+                    <li><a href="/screenings">Screenings</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </form>
+</div>
+
 </body>
 </html>
