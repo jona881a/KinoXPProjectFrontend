@@ -30,9 +30,6 @@ function getMovie(movieid) {
 pbGetMovies.addEventListener('click',fetchMoviesFromDB);
 
 
-
-
-
 function updateTableHTML(myArray) {
     var tableBody = document.getElementById("movies"),
         newRow, newCell;
