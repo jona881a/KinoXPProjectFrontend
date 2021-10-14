@@ -7,24 +7,24 @@ const moviesMap = new Map(); //map der holder alle movies så de kan findes frem
 
 
     //Henter alt i moviestabellen og laver det til et promiseobject
-    const promise = fetch(urlMovies).then(response => response.json());
-    promise.then(data =>{ //Vi reagere på dataen der kommer fra vores RESTapi
-        data.forEach(movie => { //Vi hiver hver movie ud af promiseobjektet
-            moviesMap.set(movie.movieID,movie);
+        const promise = fetch(urlMovies).then(response => response.json());
+        promise.then(data => { //Vi reagere på dataen der kommer fra vores RESTapi
+            data.forEach(movie => { //Vi hiver hver movie ud af promiseobjektet
+                moviesMap.set(movie.movieID, movie);
+            })
+            showMoviesMap();
         })
-        showMoviesMap();
-    })
  //fetching movies from database
 
 function showMoviesMap() {
     for (const movieKey of moviesMap.keys()) {
         console.log(moviesMap.get(movieKey));
     }
-}
+} //Viser movies i et map i konsolen
 
 function getMovie(movieid) {
     return moviesMap.get(movieid);
-}
+} //Henter den enkelte movies pba. deres movieid
 
 //Eventlisteners
 //////pbGetMovies.addEventListener('click',fetchMoviesFromDB);
