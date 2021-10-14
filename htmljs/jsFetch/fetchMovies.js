@@ -28,3 +28,33 @@ function getMovie(movieid) {
 
 //Eventlisteners
 pbGetMovies.addEventListener('click',fetchMoviesFromDB);
+
+
+
+
+
+function updateTableHTML(myArray) {
+    var tableBody = document.getElementById("movies"),
+        newRow, newCell;
+
+    // Reset the table
+    tableBody.innerHTML = "";
+
+    // Build the new table
+    for (var i=0; i < myArray.length; i++) {
+        newRow = document.createElement("tr");
+        tableBody.appendChild(newRow);
+
+        if (myArray[i] instanceof Array) {
+            for (var j=0; j < myArray[i].length; j++) {
+                newCell = document.createElement("td");
+                newCell.textContent = update[i][j];
+                newRow.appendChild(newCell);
+            }
+        } else {
+            newCell = document.createElement("td");
+            newCell.textContent = myArray[i];
+            newRow.appendChild(newCell);
+        }
+    }
+}
