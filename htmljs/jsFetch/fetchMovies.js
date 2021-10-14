@@ -5,7 +5,7 @@ const urlMovies = "http://localhost:8080/movies";
 const pbGetMovies = document.querySelector(".pbGetMovies");
 const moviesMap = new Map(); //map der holder alle movies så de kan findes frem på deres keys
 
-function fetchMoviesFromDB() {
+
     //Henter alt i moviestabellen og laver det til et promiseobject
     const promise = fetch(urlMovies).then(response => response.json());
     promise.then(data =>{ //Vi reagere på dataen der kommer fra vores RESTapi
@@ -14,7 +14,7 @@ function fetchMoviesFromDB() {
             console.log(getMovie(2));
         })
     })
-} //fetching movies from database
+ //fetching movies from database
 
 function showMoviesMap() {
     for (const movieKey of moviesMap.keys()) {
@@ -27,7 +27,7 @@ function getMovie(movieid) {
 }
 
 //Eventlisteners
-pbGetMovies.addEventListener('click',fetchMoviesFromDB);
+//////pbGetMovies.addEventListener('click',fetchMoviesFromDB);
 
 
 function updateTableHTML(myArray) {
