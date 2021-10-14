@@ -20,10 +20,40 @@
     </div>
 </header>
 
-    <h1>Movies currently in kinoXP</h1>
+<h1>Movies currently in kinoXP</h1>
 
-    <button class="pbGetMovies">Hent movies fra database (TEST)</button>
+<table class="table" id="screeningsTable">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Time</th>
+            <th>Movie</th>
+            <th>Room</th>
+            <th>AgeR</th>
+            <th>PrisPrSeat</th>
+            <th>Reserved</th>
+            <th>Available</th>
+            <th> % </th>
+            <th>Seats</th>
+            <th>Cancelled y/n</th>
+            <th>Delete</th>
+            <th>Edit</th>
+            <th>
+                <a href="/createMovie">
+                    <button class="btn" id="btn-Create">Create new screening</button>
+                </a>
+            </th>
+        </tr>
+    </thead>
+        <tbody class="data"> <!--Husk at definere i JS-->
+            <td />
+    </tbody>
+</table>
 
-    <script src="jsFetch/fetchMovies.js"></script>
+
+<button class="pbGetMovies">Hent movies fra database (TEST)</button>
+
+
+<script src="jsFetch/fetchMovies.js"></script>
 </body>
 </html>
