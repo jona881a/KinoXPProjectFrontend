@@ -1,5 +1,3 @@
-out("jeg er i create movie tabel");
-
 const table = document.getElementById("movie_tabel");
 
 function addRow(movie) {
@@ -48,12 +46,9 @@ function addRow(movie) {
 async function deleteMovie(movie) {
     try {
         const response = await restDeleteMovie(movie);
-        out("Vi har slettet");
-        out(response);
 
     } catch(error) {
         alert(error.message);
-        out(error);
     }
 }
 
@@ -71,7 +66,6 @@ async function restDeleteMovie(movie) {
     const response = await fetch(url, fetchOptions);
 
     if (!response.ok) {
-        out("det gik ikke godt");
     }
 
     return response;
@@ -79,7 +73,6 @@ async function restDeleteMovie(movie) {
 
 
 function createTableFromMap(btn) {
-    out("create table");
     table.innerHTML = "";
     for (const movieKey of movieMap.keys()) {
         const movie1 = movieMap.get(movieKey);
