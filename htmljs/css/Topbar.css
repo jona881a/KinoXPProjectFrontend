@@ -8,7 +8,7 @@ body {
     margin: 0 auto;
 }
 header {
-    background-color: orange;
+    background-color: #e52319;
 }
 header::after {
     content: '';
@@ -44,5 +44,5 @@ header::after {
     padding: 12px 12px;
 }
 .nav a:hover {
-    background-color: #e52319;
+    background-color: darkred;
 }
