@@ -1,3 +1,39 @@
-.table {
+.table{
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+th{
+    background-color:  #e52319;
+}
+td, th{
+    border: 1px solid black;
+    text-align: left;
+    padding: 4px;
+}
 
+tr:nth-child(even){
+    background: #e52319;
+}
+tr:nth-child(odd){
+    background: #ece9e3;
+}
+
+.btn{
+    border: none;
+    padding: 7px 10px;
+    text-align: center;
+    margin: auto;
+}
+
+.btn:hover{
+    box-shadow: 2px 2px #a40411;
+    cursor: pointer;
+}
+
+#btn-Create{
+    background-color: #459f04;
+}
+#btn-Create:hover{
+    background-color: #1c7a02;
 }
