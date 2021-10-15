@@ -67,20 +67,13 @@ async function insertScreeningInBackend(url, formData) {
         availableSeats : 400,
         percentageReserved : 0,
         isCancelled : 0,
-        movieID : selectedMovie.movieID,
-        roomID : plainFormData.roomNumber,
-        historyID : 0
+        movie: {
+            movieID: selectedMovie.movieID
+        },
+        room: {
+            roomID: plainFormData.roomNumber
+        }
     }
-    /*
-     private Date startTime;
-    private Date endTime;
-    private double seatPrice;
-    private int ageRestriction;
-    private int reservedSeats;
-    private int availableSeats;
-    private double percentageReserved;
-    private boolean isCancelled;
-     */
 
     const JSONObjectToJSONString = JSON.stringify(screeningJSON);
 
