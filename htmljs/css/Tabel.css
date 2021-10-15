@@ -9,6 +9,7 @@
     border-collapse: collapse;
     width: 80%;
     margin: auto;
+    margin: auto;
 }
 
 td, th{
@@ -26,13 +27,14 @@ tr:nth-child(odd){
     background-image: linear-gradient(to right, #453030,grey,lightgray);
 }
 
-.createMovieBtn{
+.createBtn{
     text-align: center;
     margin:25px auto;
+
 }
 .btn-create{
     border: none;
-    width:250px;
+    width:350px;
     height:70px;
     text-align: center;
     font-size: 26px;
@@ -55,6 +57,8 @@ tr:nth-child(odd){
     width: 500px;
     margin: auto;
     text-align: center;
+
+
 }
 
 
