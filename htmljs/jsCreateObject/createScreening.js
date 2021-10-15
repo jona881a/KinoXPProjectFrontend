@@ -2,6 +2,7 @@
 console.log("createScreening called");
 
 const movieSelector = document.getElementById("moviedropdown");
+let movieObject;
 
 async function loadAsyncData() {
     console.log("Start");
@@ -10,6 +11,7 @@ async function loadAsyncData() {
     showMoviesMap();
     createDropDown();
 }
+
 function createDropDown() {
     moviesMap.forEach(movie => {
         console.log(movie);
@@ -22,10 +24,17 @@ function createDropDown() {
         movieSelector.addEventListener("change", (event) => {
             const optionIndex = movieSelector.selectedIndex;
             const chosenOption = movieSelector.options[optionIndex];
+            movieObject = chosenOption;
+            console.log(chosenOption);
             console.log(chosenOption.value);
             console.log(chosenOption.textContent);
         })
     })
 }
+
+function createScreeningsData() {
+
+}
+
 
 loadAsyncData();
