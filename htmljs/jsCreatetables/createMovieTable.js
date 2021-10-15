@@ -76,7 +76,8 @@ async function restDeleteMovie(movie) {
 }
 
 
-function createTableFromMap(btn) {
+async function createTableFromMap(btn) {
+  await  fetchMoviesFromDB();
     console.log("create table");
     for (const movieKey of moviesMap.keys()) {
         const movie1 = moviesMap.get(movieKey);

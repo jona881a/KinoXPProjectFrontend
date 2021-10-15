@@ -32,6 +32,13 @@ function createDropDown() {
     })
 }
 
+function chooseRoom(){
+
+}
+
+
+
+
 function createScreeningsData() {
 
 }
