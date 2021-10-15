@@ -1,5 +1,5 @@
 //URL til controlleren i backenden som henter alle movies i JSON format
-const urlScreenings = "http://localhost:8080/screnings";
+const urlScreenings = "http://localhost:8080/screenings";
 
 //Query for knappen som aktivere vores request til databasen
 const screeningsMap = new Map(); //map der holder alle movies så de kan findes frem på deres keys
