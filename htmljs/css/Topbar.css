@@ -45,9 +45,13 @@ body {
 }
 .nav ul li a:hover{
     transform:translateY(3%);
-    border-bottom:1px solid red;
+    border-bottom:2px solid red;
 }
 
+#current{
+    border-bottom:2px solid red;
+    transform:translateY(3%);
+}
 
 
 .logo{
