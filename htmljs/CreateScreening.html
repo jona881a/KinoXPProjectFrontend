@@ -6,20 +6,23 @@
     <link rel="stylesheet" type="text/css" href="css/Topbar.css">
 </head>
 <body>
-<header>
-    <img class="logo" src="img/img.png" height="100" width="170"/>
-    <div class="container">
 
-        <nav class="nav">
-            <ul>
-                <li><a href="/screenings">Screenings</a></li>
-                <li><a href="/movies">Movies</a></li>
-                <li><a href="/rooms">Rooms</a></li>
-                <li><a href="/history">History</a></li>
-            </ul>
-        </nav>
+<div class = "header">
+    <div>
+        <img class="logo" src="img/img.png" />
     </div>
-</header>
+    <div class="container">
+            <nav class="nav">
+                <ul>
+                    <li><a href="Screenings.html">Screenings</a></li>
+                    <li><a href="Movies.html">Movies</a></li>
+                    <li><a href="Rooms.html">Rooms</a></li>
+                    <li><a href="Histories.html">History</a></li>
+                </ul>
+            </nav>
+
+    </div>
+</div>
 
 <div class="form-container">
     <form id=assign action="/screeningsCreate" method="post">
@@ -28,35 +31,35 @@
 
         </div>
 
-
-
-        <label>* Enter startdate- and time</label>
-        <input type="datetime-local" name="movieStartDate">
-        <input type="datetime-local" name="movieEndDate">
-        <br/>
-
-
-
-        <label>* Choose (available) movies shown during screening</label>
-        <select id="moviedropdown"  required>
-
-
-        </select><br/>
+        <div>
+            <label>* Enter startdate- and time</label>
+            <input type="datetime-local" name="movieStartDate">
+            <input type="datetime-local" name="movieEndDate">
+        </div>
+        <div>
+            <label>* Choose (available) movies shown during screening</label>
+            <select id="moviedropdown"  required></select>
+        </div>
 
         <div class="Age restriction">
 
         </div>
+        <div>
+            <label>* Choose room</label>
+            <select class="roomdropdown" required>
+                <option>1</option>
+                <option>2</option>
+            </select>
+        </div>
+        <div>
+            <label>* Enter price pr. seat (without kr.)</label>
+            <input type="number" name="pricePrSeat" required>
+        </div>
 
-        <label>* Choose room</label>
-        <select class="roomdropdown" required>
-            <option>1</option>
-            <option>2</option>
-        </select><br/>
+        <div id = "footer">
+            <input type="submit" value="Create">
+        </div>
 
-        <label>* Enter price pr. seat (without kr.)</label>
-        <input type="number" name="pricePrSeat" required>
-
-        <input type="submit" value="Create">
 
         <!--<input type="" value="Cancel">-->
 
