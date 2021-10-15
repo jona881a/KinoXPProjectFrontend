@@ -7,7 +7,7 @@ const urlRooms = "http://localhost:8080/rooms";
 const pbGetRooms = document.querySelector(".pbGetRooms");
 const roomsMap = new Map(); //map der holder alle movies så de kan findes frem på deres keys
 
-function fetchRoomsFromDB() {
+async function fetchRoomsFromDB() {
     //Henter alt i moviestabellen og laver det til et promiseobject
     const promise = fetch(urlRooms).then(response => response.json());
     promise.then(data =>{ //Vi reagere på dataen der kommer fra vores RESTapi
