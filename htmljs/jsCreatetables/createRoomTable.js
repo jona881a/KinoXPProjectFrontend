@@ -1,4 +1,4 @@
-out("jeg er i create room tabel");
+console.log("jeg er i create room tabel");
 
 const table = document.getElementById("room_tabel");
 
@@ -10,21 +10,18 @@ function addRow(room) {
     let cell1 = row.insertCell(0);
     cell1.innerHTML = room.roomID;
 
-    //let cell2 = row.insertCell(1);
-    //cell2.innerHTML = room.room;
     let cell2 = row.insertCell(1);
-    cell2.innerHTML = room.row;
+    cell2.innerHTML = room.seatRow;
 
     let cell3 = row.insertCell(2);
-    cell3.innerHTML = room.seats;
+    cell3.innerHTML = room.seat;
 
 }
 
 function createTableFromMap(btn) {
-    out("create table");
-    table.innerHTML = "";
-    for (const roomKey of roomMap.keys()) {
-        const room1 = roomMap.get(roomKey);
+    console.log("create table");
+    for (const roomKey of roomsMap.keys()) {
+        const room1 = roomsMap.get(roomKey);
         addRow(room1);
     }
 }

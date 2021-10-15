@@ -1,10 +1,12 @@
-const table = document.getElementById("movie_tabel");
+console.log("jeg er i create movie tabel");
+
+const table = document.getElementById("movie_table");
 
 function addRow(movie) {
     let rowCount = table.rows.length;
     let row = table.insertRow(rowCount);
     row.id = movie.movie;
-
+console.log("row id = movie" + row.id);
     let cell1 = row.insertCell(0);
     cell1.innerHTML = movie.movieID;
 
@@ -24,7 +26,7 @@ function addRow(movie) {
     cell6.innerHTML = movie.actors;
 
     let cell7 = row.insertCell(6);
-    cell7.innerHTML = movie.isAvailable;
+    cell7.innerHTML = movie.is_Available;///// fejjjl
 
 
     //button til at slette movie
@@ -38,17 +40,18 @@ function addRow(movie) {
         deleteMovie(movie);
     }
     cell8.appendChild(pbDelete);
-
 }
-
  //add row
 
 async function deleteMovie(movie) {
     try {
         const response = await restDeleteMovie(movie);
+        out("Vi har slettet");
+        out(response);
 
     } catch(error) {
         alert(error.message);
+        out(error);
     }
 }
 
@@ -66,6 +69,7 @@ async function restDeleteMovie(movie) {
     const response = await fetch(url, fetchOptions);
 
     if (!response.ok) {
+        out("det gik ikke godt");
     }
 
     return response;
@@ -73,9 +77,10 @@ async function restDeleteMovie(movie) {
 
 
 function createTableFromMap(btn) {
-    table.innerHTML = "";
-    for (const movieKey of movieMap.keys()) {
-        const movie1 = movieMap.get(movieKey);
+    console.log("create table");
+    for (const movieKey of moviesMap.keys()) {
+        const movie1 = moviesMap.get(movieKey);
+        console.log(movie1);
         addRow(movie1);
     }
 }
