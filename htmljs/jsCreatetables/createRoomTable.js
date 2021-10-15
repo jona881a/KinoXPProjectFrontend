@@ -18,7 +18,8 @@ function addRow(room) {
 
 }
 
-function createTableFromMap(btn) {
+async function createTableFromMap(btn) {
+    await fetchRoomsFromDB();
     console.log("create table");
     for (const roomKey of roomsMap.keys()) {
         const room1 = roomsMap.get(roomKey);
