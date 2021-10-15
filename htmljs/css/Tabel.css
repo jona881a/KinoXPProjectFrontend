@@ -1,39 +1,75 @@
+
+
+.table-wrap{
+    width: 1350px;
+    margin: auto;
+}
+
 .table{
     border-collapse: collapse;
     width: 80%;
     margin: auto;
 }
-th{
-    background-color:  #e52319;
-}
+
 td, th{
+
     border: 1px solid black;
     text-align: left;
     padding: 4px;
 }
 
 tr:nth-child(even){
-    background: #e52319;
+    background-color: transparent;
+    color: white;
 }
 tr:nth-child(odd){
-    background: #ece9e3;
+    background-image: linear-gradient(to right, #453030,grey,lightgray);
 }
-
 .btn{
     border: none;
     padding: 7px 10px;
     text-align: center;
-    margin: auto;
-}
-
-.btn:hover{
-    box-shadow: 2px 2px #a40411;
-    cursor: pointer;
+    margin-outside: 20px;
+    margin-inside: 20px;
+    margin-left: 75px;
 }
 
 #btn-Create{
-    background-color: #459f04;
+    background-color: white;
 }
 #btn-Create:hover{
-    background-color: #1c7a02;
+    cursor: pointer;
+    background-color: #6b6a6b;
+}
+
+.pageTitle {
+    font-size: 45px;
+    text-shadow: -2px -2px #6b0101, -3px 0 4px black;
+    color: #a40411;
+    padding: 16px;
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+.createMovieBtn{
+    margin: auto;
+    width: 300px;
+    padding: 10px;
+}
+
+.createTable-Wrap{
+    margin: auto;
+    width: 100px;
+    align-items: center;
+}
+
+.pbCreateTable{
+    padding: 7px 10px;
+    text-align: center;
+    margin-left: auto;
+}
+.pbCreateTable:hover{
+    cursor: pointer;
+    background-color: #6b6a6b;
 }
