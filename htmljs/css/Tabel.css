@@ -25,21 +25,27 @@ tr:nth-child(even){
 tr:nth-child(odd){
     background-image: linear-gradient(to right, #453030,grey,lightgray);
 }
+
+.createMovieBtn{
+    text-align: center;
+    margin:25px auto;
+}
 .btn{
     border: none;
-    padding: 7px 10px;
+    width:250px;
+    height:70px;
     text-align: center;
-    margin-outside: 20px;
-    margin-inside: 20px;
-    margin-left: 75px;
+    font-size: 26px;
+    color:white;
 }
 
 #btn-Create{
-    background-color: white;
+    background-color: rgba(0,0,0,0);
 }
 #btn-Create:hover{
     cursor: pointer;
-    background-color: #6b6a6b;
+    border-bottom:1px solid red;
+    transform:translateY(2%);
 }
 
 .pageTitle {
@@ -52,24 +58,24 @@ tr:nth-child(odd){
     text-align: center;
 }
 
-.createMovieBtn{
-    margin: auto;
-    width: 300px;
-    padding: 10px;
-}
 
 .createTable-Wrap{
-    margin: auto;
-    width: 100px;
-    align-items: center;
+    margin:50px auto;
+    text-align: center;
 }
 
 .pbCreateTable{
+    border:none;
     padding: 7px 10px;
     text-align: center;
-    margin-left: auto;
+    background-color: rgba(0,0,0,0);
+    color:white;
+    width:250px;
+    height: 75px;
+    font-size:26px;
 }
 .pbCreateTable:hover{
     cursor: pointer;
-    background-color: #6b6a6b;
+    border-bottom:1px solid red;
+    transform:translateY(2%);
 }
