@@ -2,13 +2,14 @@
 console.log("createScreening called");
 
 const movieSelector = document.getElementById("moviedropdown");
-let movieObject;
+
+let selectedMovie;
 
 async function loadAsyncData() {
     console.log("Start");
     await fetchMoviesFromDB();
     console.log("slut");
-    showMoviesMap();
+    //showMoviesMap();
     createDropDown();
 }
 
@@ -23,23 +24,82 @@ function createDropDown() {
 
         movieSelector.addEventListener("change", (event) => {
             const optionIndex = movieSelector.selectedIndex;
-            const chosenOption = movieSelector.options[optionIndex];
-            movieObject = chosenOption;
-            console.log(chosenOption);
-            console.log(chosenOption.value);
-            console.log(chosenOption.textContent);
+            selectedMovie = moviesMap.get(optionIndex);
         })
     })
 }
 
-function chooseRoom(){
+document.addEventListener("DOMContentLoaded",createFormEventListener);
 
+function createFormEventListener() { //Laver eventet der lytter til hvornår vi henter formen
+    const formObject = document.getElementById("assign");
+    formObject.addEventListener("submit",handleScreeningsSubmit);
 }
 
+async function handleScreeningsSubmit(event) {
+    event.preventDefault();
+
+    const form = event.currentTarget; //Fortæller hvilket event (submittet) som vi skal tage fra
+    const url = form.action; //Tager det url som står i action i formheaderen
+
+    try {
+        const formData = new FormData(form);
+        await insertScreeningInBackend(url,formData);
+    } catch(error) {
+        alert(error.message);
+    }
+}
+
+async function insertScreeningInBackend(url, formData) {
+    const plainFormData = Object.fromEntries(formData.entries());
+
+    console.log(plainFormData);
+    //console.log(toJSONString);
+    console.log(selectedMovie);
+
+    const screeningJSON = {
+        movieName : selectedMovie.movieName,
+        startTime : plainFormData.movieStartDateAndTime,
+        endTime : plainFormData.movieEndDateAndTime,
+        seatPrice : plainFormData.pricePrSeat,
+        ageRestriction : selectedMovie.ageRestriction,
+        reservedSeats : 0,
+        availableSeats : 400,
+        percentageReserved : 0,
+        isCancelled : 0,
+        movieID : selectedMovie.movieID,
+        roomID : plainFormData.roomNumber,
+        historyID : 0
+    }
+    /*
+     private Date startTime;
+    private Date endTime;
+    private double seatPrice;
+    private int ageRestriction;
+    private int reservedSeats;
+    private int availableSeats;
+    private double percentageReserved;
+    private boolean isCancelled;
+     */
+
+    const JSONObjectToJSONString = JSON.stringify(screeningJSON);
+
+    console.log(JSONObjectToJSONString);
+
+    const POSTOptions = {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSONObjectToJSONString
+    }
+
+    const response = await fetch(url, POSTOptions);
 
 
 
-function createScreeningsData() {
+
+    return response.json();
 
 }
 

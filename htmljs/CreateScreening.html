@@ -26,7 +26,7 @@
 
 
 <div class="form-container">
-    <form id=assign action="/screeningsCreate" method="post">
+    <form id=assign action="http://localhost:8080/screeningsCreate" method="post">
 
         <div class="screeningID">
 
@@ -34,12 +34,14 @@
 
         <div>
             <label>* Enter startdate- and time</label>
-            <input type="datetime-local" name="movieStartDate">
-            <input type="datetime-local" name="movieEndDate">
+            <input type="datetime-local" name="movieStartDateAndTime" required>
+            <input type="datetime-local" name="movieEndDateAndTime" required>
         </div>
         <div>
             <label>* Choose (available) movies shown during screening</label>
-            <select id="moviedropdown"  required></select>
+            <select id="moviedropdown"  required>
+                <option>-choose-</option>
+            </select>
         </div>
 
         <div class="Age restriction">
@@ -47,10 +49,14 @@
         </div>
         <div>
             <label>* Choose room</label>
+            <input type="number" name="roomNumber" required>
+            <!--
             <select class="roomdropdown" required>
-                <option>1</option>
-                <option>2</option>
+                <option value="choose">-choose-</option>
+                <option value="room1" name="room1">1</option>
+                <option value="room2" name="room2">2</option>
             </select>
+            -->
         </div>
         <div>
             <label>* Enter price pr. seat (without kr.)</label>
@@ -58,7 +64,7 @@
         </div>
 
         <div id = "footer">
-            <input type="submit" value="Create">
+            <button type="submit" title="Saves the screening" id="submit">Save screening</button>
         </div>
 
 
