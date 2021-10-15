@@ -9,15 +9,15 @@
 <body>
 
 <div class="header">
-    <img class="logo" src="img/img.png" height="100" width="170"/>
+    <img class="logo" src="img/img.png" alt="Logo"/>
     <div class="container">
 
         <nav class="nav">
             <ul>
-                <li><a href="/screenings">Screenings</a></li>
-                <li><a href="/movies">Movies</a></li>
-                <li><a href="/rooms">Rooms</a></li>
-                <li><a href="/history">History</a></li>
+                <li><a href="Screenings.html">Screenings</a></li>
+                <li><a href="Movies.html">Movies</a></li>
+                <li><a href="Rooms.html">Rooms</a></li>
+                <li><a href="Histories.html">History</a></li>
             </ul>
         </nav>
     </div>
@@ -30,32 +30,41 @@
 
         </div>
 
-        <label>* Enter startdate- and time (DD:MM:YYYY, HH:MM)</label>
-        <input type="number" name="movieStartDate" required>
-
-        <label>* Choose (available) movies shown during screening</label>
-        <select class="moviedropdown" required></select>
-
-        <label>* Choose age restriction</label>
-        <select class="moviedropdown" required></select>
-
-        <label>* Choose room</label>
-        <select class="roomdropdown" required></select>
-
-        <label>* Enter price pr. seat (without kr.)</label>
-        <input type="number" name="pricePrSeat" required>
-
-        <input type="submit" value="Create">
-
-        <!--<input type="" value="Cancel">-->
-
-        <div class="container">
-            <nav class="cancelBtn">
-                <ul>
-                    <li><a href="/KinoXPProjectFrontend/htmljs/Screenings.html">Screenings</a></li>
-                </ul>
-            </nav>
+        <div>
+            <label>* Enter startdate- and time (DD:MM:YYYY, HH:MM)
+                <input type="number" name="movieStartDate" required>
+            </label>
         </div>
+
+        <div>
+            <label>* Choose (available) movies shown during screening
+                <select class="moviedropdown" required></select>
+            </label>
+        </div>
+
+        <div>
+            <label>* Choose age restriction
+                <select class="moviedropdown" required></select>
+            </label>
+        </div>
+
+        <div>
+            <label>* Choose room
+                <select class="roomdropdown" required></select>
+            </label>
+        </div>
+
+        <div>
+            <label>* Enter price pr. seat (without kr.)
+                <input type="number" name="pricePrSeat" required>
+            </label>
+        </div>
+
+
+        <div id = "footer">
+            <input  type="submit" value="Create">
+        </div>
+        
 
     </form>
 </div>

@@ -8,7 +8,7 @@ const screeningsMap = new Map(); //map der holder alle movies så de kan findes 
 async function fetchScreeningsFromDB() {
     const promise = fetch(urlScreenings).then(response => response.json());
     await promise.then(data => { //Vi reagere på dataen der kommer fra vores RESTapi
-        data.forEach(movie => { //Vi hiver hver movie ud af promiseobjektet
+        data.forEach(screening => { //Vi hiver hver movie ud af promiseobjektet
             screeningsMap.set(screening.screeningID, screening);
         })
     })

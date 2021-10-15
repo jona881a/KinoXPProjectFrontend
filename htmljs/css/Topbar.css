@@ -82,21 +82,25 @@ body {
     outline:none;
 }
 
-
 .form-container label{
     font-size: 20px;
-
 }
+
 #footer{
     float:right;
 }
-#footer input{
-    width:75px;
+#footer input, #footer button{
+    width:150px;
     height:35px;
     font-size: 15px;
     border-radius: 5px;
 }
-#footer input:hover{
+#footer input:hover, #footer button:hover{
     cursor:pointer;
-    background: rgba(205, 205, 205, 0.48);
+    background-color: rgb(193, 193, 193);
+}
+
+#footer-btn{
+    cursor:pointer;
+    background: #6b0101;
 }
