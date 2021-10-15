@@ -26,10 +26,6 @@ function getMovie(movieid) {
     return moviesMap.get(movieid);
 } //Henter den enkelte movies pba. deres movieid
 
-//Eventlisteners
-pbGetMovies.addEventListener('click',fetchMoviesFromDB);
-
-
 function updateTableHTML(myArray) {
     var tableBody = document.getElementById("movies"),
         newRow, newCell;

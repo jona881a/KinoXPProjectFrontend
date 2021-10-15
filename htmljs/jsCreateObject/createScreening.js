@@ -1,20 +1,15 @@
 
 console.log("createScreening called");
-let pbGetMovies = document.querySelector(".pbGetMovies");
-
-showMoviesMap();
 
 const movieSelector = document.getElementById("moviedropdown");
 
-async function kurt() {
+async function loadAsyncData() {
     console.log("Start");
     await fetchMoviesFromDB();
     console.log("slut");
     showMoviesMap();
     createDropDown();
 }
-
-kurt();
 function createDropDown() {
     moviesMap.forEach(movie => {
         console.log(movie);
@@ -32,3 +27,5 @@ function createDropDown() {
         })
     })
 }
+
+loadAsyncData();
