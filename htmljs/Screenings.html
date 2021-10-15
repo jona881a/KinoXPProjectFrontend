@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <title>Screenings</title>
     <link rel="stylesheet" type="text/css" href="css/Topbar.css">
+    <link rel="stylesheet" type="text/css" href="css/Tabel.css">
 </head>
 <body>
+<div class = "header">
+    <img class="logo" src="img/img.png"/>
+    <div class="container">
 
+        <nav class="nav">
+            <ul>
+                <li><a href="Screenings.html">Screenings</a></li>
+                <li><a href="Movies.html">Movies</a></li>
+                <li><a href="Rooms.html">Rooms</a></li>
+                <li><a href="Histories.html">History</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
 <div id="pageHeadline">
 <h1 class="h1">Screenings</h1>
+</div>
+
+<h1 class="pageTitle">Coming Screenings</h1><br/>
+<div class="createMovieBtn">
+    <a href="/createScreening">
+        <button class="btn-create">Create new Screening</button><br/>
+    </a>
 </div>
 
 <table class="table" id="screeningsTable">
@@ -27,11 +48,6 @@
             <th>Cancelled y/n</th>
             <th>Delete</th>
             <th>Edit</th>
-            <th>
-                <a href="/KinoXPProjectFrontend/htmljs/CreateScreening.html">
-                    <button class="btn" id="btn-Create">Create new screening</button>
-                </a>
-            </th>
         </tr>
     </thead>
     <tbody>

@@ -30,19 +30,18 @@ tr:nth-child(odd){
     text-align: center;
     margin:25px auto;
 }
-.btn{
+.btn-create{
     border: none;
     width:250px;
     height:70px;
     text-align: center;
     font-size: 26px;
     color:white;
-}
-
-#btn-Create{
     background-color: rgba(0,0,0,0);
 }
-#btn-Create:hover{
+
+
+.btn-create:hover{
     cursor: pointer;
     border-bottom:1px solid red;
     transform:translateY(2%);
