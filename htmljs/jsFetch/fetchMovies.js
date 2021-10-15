@@ -5,7 +5,7 @@ const urlMovies = "http://localhost:8080/movies";
 //Query for knappen som aktivere vores request til databasen
 const moviesMap = new Map(); //map der holder alle movies så de kan findes frem på deres keys
 
-//Henter alt i moviestabellen og laver det til et promiseobject
+//Henter alt i movies tabellen og laver det til et promiseobject
 async function fetchMoviesFromDB() {
     const promise = fetch(urlMovies).then(response => response.json());
     await promise.then(data => { //Vi reagere på dataen der kommer fra vores RESTapi
