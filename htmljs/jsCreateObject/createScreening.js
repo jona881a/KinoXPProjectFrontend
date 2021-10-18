@@ -89,9 +89,6 @@ async function insertScreeningInBackend(url, formData) {
 
     const response = await fetch(url, POSTOptions);
 
-
-
-
     return response.json();
 
 }
