@@ -8,8 +8,8 @@
 .table{
     border-collapse: collapse;
     width: 80%;
-    margin: auto;
-    margin: auto;
+    margin:auto;
+
 }
 
 td, th{
@@ -17,6 +17,7 @@ td, th{
     border: 1px solid black;
     text-align: left;
     padding: 4px;
+
 }
 
 tr:nth-child(even){
@@ -96,11 +97,12 @@ tr:nth-child(odd){
 }
 
 .pageText{
-    font-size: 45px;
+    font-size: 26px;
     text-shadow: -2px -2px #6b0101, -3px 0 4px black;
     color: #a40411;
     padding: 16px;
     width: 500px;
-    margin: auto;
-    text-align: center;
+    margin-left:140px;
+
+
 }

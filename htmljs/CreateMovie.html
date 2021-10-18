@@ -15,7 +15,7 @@
         <nav class="nav">
             <ul>
                 <li><a href="Screenings.html">Screenings</a></li>
-                <li><a href="Movies.html">Movies</a></li>
+                <li><a id = "current" href="Movies.html">Movies</a></li>
                 <li><a href="Rooms.html">Rooms</a></li>
                 <li><a href="Histories.html">History</a></li>
             </ul>
@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<div class="form-container">
+<div class="form-container" id = "formMovie">
     <form id=assign action="/moviesCreate" method="post">
 
         <div class="movieID">
@@ -31,32 +31,41 @@
         </div>
 
         <div>
-            <label>* Enter startdate- and time (DD:MM:YYYY, HH:MM)
-                <input type="number" name="movieStartDate" required>
+            <label>* Movie Name
+                <input type="text" name="movieName" required>
             </label>
         </div>
 
         <div>
-            <label>* Choose (available) movies shown during screening
-                <select class="moviedropdown" required></select>
+            <label>* Duration (Hour:Minutes:Seconds)
+                <input type="number" name="duration" required/>
             </label>
         </div>
 
         <div>
-            <label>* Choose age restriction
-                <select class="moviedropdown" required></select>
+            <label>* Description
+                <input  type = "text" name="description" required>
             </label>
         </div>
 
         <div>
-            <label>* Choose room
-                <select class="roomdropdown" required></select>
+            <label>* Age Restriction
+                <input type = "number" name="ageRestriction" required>
             </label>
         </div>
 
         <div>
-            <label>* Enter price pr. seat (without kr.)
-                <input type="number" name="pricePrSeat" required>
+            <label>* Actors
+                <input type="text" name="actors" required>
+            </label>
+        </div>
+
+        <div>
+            <label>* Is Available
+                <select name="actors" required>
+                    <option value = "true">True</option>
+                    <option value = "false">False</option>
+                </select>
             </label>
         </div>
 
