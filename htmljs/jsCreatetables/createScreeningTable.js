@@ -10,31 +10,34 @@ function addRow(screening) {
     cell1.innerHTML = screening.screeningID;
 
     let cell2 = row.insertCell(1);
-    cell2.innerHTML = screening.movie.movieName;
+    cell2.innerHTML = screening.startTime;
 
     let cell3 = row.insertCell(2);
-    cell3.innerHTML = screening.room.roomID;
+    cell3.innerHTML = screening.movie.movieName;
 
     let cell4 = row.insertCell(3);
-    cell4.innerHTML = screening.ageRestriction;
+    cell4.innerHTML = screening.room.roomID;
 
     let cell5 = row.insertCell(4);
-    cell5.innerHTML = screening.seatPrice;
+    cell5.innerHTML = screening.ageRestriction;
 
     let cell6 = row.insertCell(5);
-    cell6.innerHTML = screening.reservedSeats;
+    cell6.innerHTML = screening.seatPrice;
 
     let cell7 = row.insertCell(6);
-    cell7.innerHTML = screening.availableSeats;
+    cell7.innerHTML = screening.reservedSeats;
 
     let cell8 = row.insertCell(7);
-    cell8.innerHTML = screening.percentageReserved;
+    cell8.innerHTML = screening.availableSeats;
 
     let cell9 = row.insertCell(8);
-    cell9.innerHTML = screening.isCancelled;
+    cell9.innerHTML = screening.percentageReserved;
+
+    let cell10 = row.insertCell(9);
+    cell10.innerHTML = screening.isCancelled;
 
     //button til at slette movie
-    let cell10 = row.insertCell(9);
+    let cell11 = row.insertCell(10);
     let pbDelete = document.createElement("input");
     pbDelete.type = "button";
     pbDelete.setAttribute("value", "Delete screening");
@@ -43,7 +46,42 @@ function addRow(screening) {
 
         deleteSreening(screening);
     }
-    cell10.appendChild(pbDelete);
+    cell11.appendChild(pbDelete);
+
+    let cell12 = row.insertCell(11)
+    let pbCancel = document.createElement("input");
+    pbCancel.type = "button";
+    pbCancel.setAttribute("value", "Cancel Screening");
+    pbCancel.onclick = function () {
+        // document.getElementById(screening.screening).
+
+        const historyObject = {
+            screeningID: document.getElementById(screening.screeningID),
+            movieName: document.getElementById(screening.movieName),
+            startTime: document.getElementById(screening.startTime),
+            endTime: document.getElementById(screening.endTime),
+            seatPrice: document.getElementById(screening.ageRestriction),
+            reservedSeats: document.getElementById(screening.reservedSeats),
+            availableSeats: document.getElementById(screening.availableSeats),
+            percentageReserved: document.getElementById(screening.percentageReserved)
+        }
+    }
+    let cell13 = row.insertCell(12)
+    let pbEdit = document.createElement("input");
+    pbEdit.type = "button";
+    pbEdit.setAttribute("value", "Edit screening");
+
+    function redirect(){
+       const url = "/KinoXPProjectFrontend/htmljs/EditScreening.html";
+        window.location.href = url;
+    }
+    pbEdit.addEventListener("click",redirect);
+
+
+
+    cell13.appendChild(pbEdit);
+
+
 }
 
 

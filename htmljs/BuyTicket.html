@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BuyTicket menu</title>
+    <link rel="stylesheet" type="text/css" href="css/Topbar.css">
+</head>
+<body>
+
+<div class = "header">
+    <div>
+        <img class="logo" src="img/img.png" />
+    </div>
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a href="Screenings.html">Screenings</a></li>
+                <li><a href="Movies.html">Movies</a></li>
+                <li><a href="Rooms.html">Rooms</a></li>
+                <li><a href="Histories.html">History</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</div>
+
+<div class="form-container">
+    <h1>Buy Ticket</h1>
+
+    <div>
+        <form id="assign" action="http://localhost:8080/saveTicket">
+            <div>
+                <label>Select movies:
+                    <select id="moviedropdown" required>
+                        <option>-choose-</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label>Select screening date and time (available screenings with specific movie)
+                    <select id="screeningdropdown">
+                        <option>-choose-</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label>Select seat(s) and row:
+                    <label>Seat(s)      Row</label>
+                        <input type="number" name="seatNumber" placeholder="Seatnumber">
+                        <input type="number" name="seatRow" placeholder="Seatrow">
+                </label>
+            </div>
+            <div id="footer">
+                <br>
+                <button type="submit" title="saves the ticket" id="submit">Buy Ticket</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <script src="jsFetch/fetchMovies.js"></script>
+    <script src="jsFetch/fetchScreenings.js"></script>
+    <script src="jsCreateObject/createScreening.js"></script>
+    <script src="jsCreateObject/createTicket.js"></script>
+</body>
+</html>

@@ -2,9 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Edit Screening</title>
+    <link rel="stylesheet" type="text/css" href="css/Topbar.css">
+    <link rel="stylesheet" type="text/css" href="css/Tabel.css">
 </head>
 <body>
+<div class="header">
+    <img class="logo" src="img/img.png" alt="Logo"/>
+    <div class="container">
 
+        <nav class="nav">
+            <ul>
+                <li><a href="Screenings.html">Screenings</a></li>
+                <li><a href="Movies.html">Movies</a></li>
+                <li><a href="Rooms.html">Rooms</a></li>
+                <li><a href="Histories.html">History</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<h1 class="pageTitle">Edit Screening</h1>
+<form id=assign action="http://localhost:8080/screeningsEdit" method="post">
+<table class="table" id="EditScreening">
+    <thead>
+    <tr>
+        <th>Start</th>
+        <th>End</th>
+        <th>Movie</th>
+        <th>Room</th>
+        <th>PrisPrSeat</th>
+        <td>Confirm</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <label>
+                <input class="dates" type="datetime-local" name="movieStartDateAndTime" placeholder="Start time" required>
+            </label>
+        </td>
+        <td>
+            <label>
+                <input class="dates" type="datetime-local" name="movieStartDateAndTime" placeholder="End time" required>
+            </label>
+        </td>
+
+        <td>
+            <label>
+                <select id="moviedropdownEdit" required>
+                    <option>-choose-</option>
+                </select>
+            </label>
+        </td>
+        <td>
+            <label>
+                <input type="number" name="roomNumber" required>
+            </label>
+        </td>
+        <td>
+            <label>
+                <input type="number" name="pricePrSeat" required>
+            </label>
+        </td>
+        <td>
+            <label>
+                <button type="submit" title="Updates Screening">Update</button>
+            </label>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</form>
+
+<script src="jsFetch/fetchMovies.js"></script>
+<script src="jsEdit/EditScreening.js"></script>
 </body>
 </html>
