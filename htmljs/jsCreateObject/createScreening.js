@@ -6,26 +6,21 @@ const movieSelector = document.getElementById("moviedropdown");
 let selectedMovie;
 
 async function loadAsyncData() {
-    console.log("Start");
     await fetchMoviesFromDB();
-    console.log("slut");
-    //showMoviesMap();
     createDropDown();
 }
 
 function createDropDown() {
     moviesMap.forEach(movie => {
-        console.log(movie);
         const optionTags = document.createElement("option");
         optionTags.textContent = movie.movieName;
         optionTags.value = movie.movieID;
         movieSelector.appendChild(optionTags)
-        console.log(optionTags);
+        })
 
         movieSelector.addEventListener("change", (event) => {
             const optionIndex = movieSelector.selectedIndex;
             selectedMovie = moviesMap.get(optionIndex);
-        })
     })
 }
 
@@ -52,8 +47,16 @@ async function handleScreeningsSubmit(event) {
 
 async function insertScreeningInBackend(url, formData) {
     const plainFormData = Object.fromEntries(formData.entries());
+    let roomCapacity;
+    console.log("Chosen roomNumber" + plainFormData.roomNumber);
 
-    console.log(plainFormData);
+    if(plainFormData.roomNumber === 1) {
+        roomCapacity = 400;
+    } else {
+        roomCapacity = 240;
+    }
+
+    console.log("RoomCapacity" + roomCapacity);
     //console.log(toJSONString);
     console.log(selectedMovie.ageRestriction);
 
@@ -64,7 +67,7 @@ async function insertScreeningInBackend(url, formData) {
         seatPrice : plainFormData.pricePrSeat,
         ageRestriction : selectedMovie.ageRestriction,
         reservedSeats : 0,
-        availableSeats : 400,
+        availableSeats : roomCapacity,
         percentageReserved : 0,
         isCancelled : 0,
         movie: {
