@@ -69,7 +69,6 @@ body {
     height:auto;
     box-shadow: 0 1px rgba(255, 255, 255, 0.1);
     border-radius: 4px;
-
 }
 
 .form-container div{
@@ -81,6 +80,9 @@ body {
     width:150px;
     padding:2px 2px;
 
+}
+#formMovie input{
+    width:350px;
 }
 .form-container div input:focus,.form-container div select:focus{
     outline:none;
