@@ -70,9 +70,15 @@ function addRow(screening) {
     let pbEdit = document.createElement("input");
     pbEdit.type = "button";
     pbEdit.setAttribute("value", "Edit screening");
-    pbEdit.onclick = function () {
 
+    function redirect(){
+       const url = "/KinoXPProjectFrontend/htmljs/EditScreening.html";
+        window.location.href = url;
     }
+    pbEdit.addEventListener("click",redirect);
+
+
+
     cell13.appendChild(pbEdit);
 
 
