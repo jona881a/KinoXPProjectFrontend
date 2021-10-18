@@ -95,6 +95,12 @@ tr:nth-child(odd){
     padding: 0;
 }
 
-.dates{
-
+.pageText{
+    font-size: 45px;
+    text-shadow: -2px -2px #6b0101, -3px 0 4px black;
+    color: #a40411;
+    padding: 16px;
+    width: 500px;
+    margin: auto;
+    text-align: center;
 }
