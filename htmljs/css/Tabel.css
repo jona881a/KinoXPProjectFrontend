@@ -82,3 +82,19 @@ tr:nth-child(odd){
     border-bottom:1px solid red;
     transform:translateY(2%);
 }
+
+.table input, .table select, .table button, .table label{
+    background-color:  grey;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: none;
+}
+
+.table td{
+    padding: 0;
+}
+
+.dates{
+
+}
