@@ -55,7 +55,7 @@ async function insertScreeningInBackend(url, formData) {
 
     console.log(plainFormData);
     //console.log(toJSONString);
-    console.log(selectedMovie);
+    console.log(selectedMovie.ageRestriction);
 
     const screeningJSON = {
         movieName : selectedMovie.movieName,
