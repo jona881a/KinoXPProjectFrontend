@@ -11,17 +11,22 @@ async function loadAsyncData() {
 }
 
 function createDropDown() {
-    moviesMap.forEach(movie => {
-        const optionTags = document.createElement("option");
-        optionTags.textContent = movie.movieName;
-        optionTags.value = movie.movieID;
-        movieSelector.appendChild(optionTags)
+        moviesMap.forEach(movie => {
+            const optionTags = document.createElement("option");
+            optionTags.textContent = movie.movieName;
+            optionTags.value = movie.movieID;
+            movieSelector.appendChild(optionTags);
         })
 
         movieSelector.addEventListener("change", (event) => {
-            const optionIndex = movieSelector.selectedIndex;
-            selectedMovie = moviesMap.get(optionIndex);
-    })
+            const optionIndex = movieSelector.value;
+
+            moviesMap.forEach(movie => {
+                if(parseInt(optionIndex) === parseInt(movie.movieID)){
+                    selectedMovie = movie;
+                }
+            })
+        })
 }
 
 document.addEventListener("DOMContentLoaded",createFormEventListener);
