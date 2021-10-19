@@ -24,7 +24,7 @@
 </div>
 
 <div class="form-container" id = "formMovie">
-    <form id=assign action="/moviesCreate" method="post">
+    <form id="assign" action="http://localhost:8080/moviesCreate" method="post">
 
         <div class="movieID">
 
@@ -38,7 +38,7 @@
 
         <div>
             <label>* Duration (Hour:Minutes:Seconds)
-                <input type="number" name="duration" required/>
+                <input type="text" name="duration" required/>
             </label>
         </div>
 
@@ -71,12 +71,14 @@
 
 
         <div id = "footer">
-            <input  type="submit" value="Create">
+            <input  type="submit" value="Create" id = "save-movie">
         </div>
         
 
     </form>
 </div>
+
+<script src ="jsCreateObject/createMovie.js"></script>
 
 </body>
 </html>
