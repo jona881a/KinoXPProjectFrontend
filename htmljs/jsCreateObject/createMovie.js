@@ -20,7 +20,6 @@ async function handleMovieSubmit(event){
         console.log("insertMovieInBackend running");
 
     }catch(error){
-        alert(error.message);
         console.log("Error in function handleMovieSubmit "+error.message)
     }
 }
@@ -46,13 +45,18 @@ async function insertMovieInBackend(url,formData){
 
     const POSTOptions = {
         method: "POST",
-        header: {
+        headers: {
             "Content-type": "application/json"
         },
         body: JSONObjectToJSONString
     }
+
+
     const response = await fetch(url,POSTOptions);
     return response.json();
+
+
+
 }
 
 
