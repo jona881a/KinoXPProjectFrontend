@@ -11,6 +11,7 @@ body {
     background-image: url("../img/img3.jfif");
     background-repeat: no-repeat;
     background-size: cover;
+    padding:0 0 200px 0;
 
 }
 .header{
