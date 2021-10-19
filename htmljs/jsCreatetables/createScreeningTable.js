@@ -33,11 +33,10 @@ function addRow(screening) {
     let cell9 = row.insertCell(8);
     cell9.innerHTML = screening.percentageReserved;
 
-    let cell10 = row.insertCell(9);
-    cell10.innerHTML = screening.employee.emloyeeName;
+
 
     //button til at slette movie
-    let cell11 = row.insertCell(10);
+    let cell11 = row.insertCell(9);
     let pbDelete = document.createElement("input");
     pbDelete.type = "button";
     pbDelete.setAttribute("value", "Delete screening");
@@ -48,7 +47,7 @@ function addRow(screening) {
     }
     cell11.appendChild(pbDelete);
 
-    let cell12 = row.insertCell(11)
+    let cell12 = row.insertCell(9)
     let pbCancel = document.createElement("input");
     pbCancel.type = "button";
     pbCancel.setAttribute("value", "Cancel Screening");
@@ -66,7 +65,7 @@ function addRow(screening) {
             percentageReserved: document.getElementById(screening.percentageReserved)
         }
     }
-    let cell13 = row.insertCell(12)
+    let cell13 = row.insertCell(11)
     let pbEdit = document.createElement("input");
     pbEdit.type = "button";
     pbEdit.setAttribute("value", "Edit screening");
