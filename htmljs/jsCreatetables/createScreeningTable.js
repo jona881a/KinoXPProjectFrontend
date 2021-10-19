@@ -34,7 +34,7 @@ function addRow(screening) {
     cell9.innerHTML = screening.percentageReserved;
 
     let cell10 = row.insertCell(9);
-    cell10.innerHTML = screening.isCancelled;
+    cell10.innerHTML = screening.employee.emloyeeName;
 
     //button til at slette movie
     let cell11 = row.insertCell(10);
