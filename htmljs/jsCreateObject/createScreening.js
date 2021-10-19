@@ -50,7 +50,7 @@ async function handleScreeningsSubmit(event) {
         alert(error.message);
     }
 
-    //window.location.href = "/KinoXPProjectFrontend/htmljs/Screenings.html";
+    window.location.href = "/KinoXPProjectFrontend/htmljs/Screenings.html";
 }
 
 async function insertScreeningInBackend(url, formData) {

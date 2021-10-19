@@ -10,7 +10,7 @@ function addRow(screening) {
     cell1.innerHTML = screening.screeningID;
 
     let cell2 = row.insertCell(1);
-    cell2.innerHTML = screening.startTime;
+    cell2.innerHTML = screening.startTime.substr(0,10)+" "+screening.startTime.substr(11,5);
 
     let cell3 = row.insertCell(2);
     cell3.innerHTML = screening.movie.movieName;
@@ -118,9 +118,20 @@ async function restDeleteScreening(screening) {
     async function createTableFromMap(btn) {
         await fetchScreeningsFromDB();
         console.log("create table");
-        for (const screeningKey of screeningsMap.keys()) {
-            const screening1 = screeningsMap.get(screeningKey);
-            addRow(screening1);
+
+
+        if(table.rows.length > 1){
+            const parent = document.querySelector("tbody");
+            while(parent.hasChildNodes()){
+                parent.removeChild(parent.firstChild);
+            }
+        }
+
+        if(table.rows.length === 1){
+            for (const screeningKey of screeningsMap.keys()) {
+                const screening1 = screeningsMap.get(screeningKey);
+                addRow(screening1);
+            }
         }
     }
 
