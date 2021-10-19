@@ -79,11 +79,30 @@ async function restDeleteMovie(movie) {
 async function createTableFromMap(btn) {
   await  fetchMoviesFromDB();
     console.log("create table");
-    for (const movieKey of moviesMap.keys()) {
-        const movie1 = moviesMap.get(movieKey);
-        console.log(movie1);
-        addRow(movie1);
+
+    if(table.rows.length !== 1){
+        const elem = document.querySelectorAll("tr");
+
+        let count = 1;
+        elem.forEach(key => {
+                if (count !== 1) {
+                    console.log(key.textContent+" To Be Removed");
+                    key.remove()
+                } else {
+                    count++;
+                }
+            }
+        );
     }
+    if(table.rows.length === 1){
+        for (const movieKey of moviesMap.keys()) {
+            const movie1 = moviesMap.get(movieKey);
+            addRow(movie1);
+        }
+    }
+
+
+
 }
 
 const pbCreateTable = document.querySelector(".pbCreateTable");

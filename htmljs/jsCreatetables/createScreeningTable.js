@@ -121,13 +121,21 @@ async function restDeleteScreening(screening) {
 
 
         if(table.rows.length > 1){
-            const parent = document.querySelector("tbody");
-            while(parent.hasChildNodes()){
-                parent.removeChild(parent.firstChild);
-            }
+            const elem = document.querySelectorAll("tr");
+
+            let count = 1;
+            elem.forEach(key => {
+                    if (count !== 1) {
+                        key.remove()
+                    } else {
+                        count++;
+                    }
+                }
+            );
         }
 
         if(table.rows.length === 1){
+            console.log("Only 1 row Left");
             for (const screeningKey of screeningsMap.keys()) {
                 const screening1 = screeningsMap.get(screeningKey);
                 addRow(screening1);
