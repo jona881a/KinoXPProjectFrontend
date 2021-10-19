@@ -45,7 +45,7 @@ async function handleScreeningsSubmit(event) {
         alert(error.message);
     }
 
-    window.location.href = "/KinoXPProjectFrontend/htmljs/Screenings.html";
+    //window.location.href = "/KinoXPProjectFrontend/htmljs/Screenings.html";
 }
 
 async function insertScreeningInBackend(url, formData) {
@@ -61,7 +61,7 @@ async function insertScreeningInBackend(url, formData) {
 
     console.log("RoomCapacity" + roomCapacity);
     //console.log(toJSONString);
-    console.log(selectedMovie.ageRestriction);
+    console.log(selectedMovie);
 
     const screeningJSON = {
         movieName : selectedMovie.movieName,
@@ -72,7 +72,7 @@ async function insertScreeningInBackend(url, formData) {
         reservedSeats : 0,
         availableSeats : roomCapacity,
         percentageReserved : 0,
-        isCancelled : 0,
+
         movie: {
             movieID: selectedMovie.movieID
         },

@@ -22,6 +22,7 @@ async function handleMovieSubmit(event){
     }catch(error){
         console.log("Error in function handleMovieSubmit "+error.message)
     }
+    window.location.href = "/KinoXPProjectFrontend/htmljs/Movies.html";
 }
 
 async function insertMovieInBackend(url,formData){
@@ -35,7 +36,7 @@ async function insertMovieInBackend(url,formData){
         duration :plainFormData.duration,
         description : plainFormData.description,
         ageRestriction : plainFormData.ageRestriction,
-        actors : plainFormData.actors
+        actors : plainFormData.actors,
     }
 
     const JSONObjectToJSONString = JSON.stringify(movieJSON);
