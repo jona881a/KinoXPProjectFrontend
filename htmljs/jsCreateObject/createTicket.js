@@ -10,6 +10,7 @@ async function loadDatabaseData() {
     await fetchMoviesFromDB(); //Henter film fra database
     await fetchScreeningsFromDB(); //Henter screenings fra dataase
     createMovieDropDown(); //laver dropdown af movies
+    setBoundariesInForm();
 }
 
 
@@ -46,11 +47,66 @@ function createScreeningDropdown() {
     })
 }
 
+function setBoundariesInForm() {
+    const minSeatVal = document.getElementById("seatNumber");
+    const maxSeatVal = document.getElementById("seatRow");
+
+    minSeatVal.setAttribute("min","1");
+    maxSeatVal.setAttribute("max","20");
+}
+
+function addMoreTickets() {
+    const seatNumberInput = document.createElement("input");
+    const seatRowInput = document.createElement("input");
+    const breakTag = document.createElement("br");
+    const newInputDiv = document.getElementById("newInputFields");
+
+    seatNumberInput.type = "number";
+    seatRowInput.type = "text";
+    
+    seatNumberInput.id = "seatNumber";
+    
+    seatNumberInput.placeholder = "Seatnumber";
+    seatRowInput.placeholder = "Seatrow";
+
+    newInputDiv.appendChild(breakTag);
+    newInputDiv.appendChild(seatNumberInput);
+    newInputDiv.appendChild(seatRowInput);
+    newInputDiv.appendChild(breakTag);
+    /*
+}
+    function createATags() {
+        out("create atags");
+        for (const komKey of kommuneMap.keys()) {
+            const kom1 = kommuneMap.get(komKey);
+            const atag = document.createElement("a");
+            atag.setAttribute("href", kom1.kommuneHref);
+            atag.innerText = kom1.kommuneNavn;
+            komtag.appendChild(atag);
+            const brtag = document.createElement("br");
+            komtag.appendChild(brtag);
+        }
+
+     */
+}
+const pbCreateMoreTicketInputs = document.getElementById("pbCreateMoreTicketInputs");
+pbCreateMoreTicketInputs.addEventListener("click",addMoreTickets);
+
 /*
  * Håndtering af formen
  */
 
-document.addEventListener("DOMContentLoaded",createFormEventListener);
+function validateForm() {
+    if (confirm("Please make sure you're ticket is correct before making the reservation")) {
+        alert("The ticket was purchased");
+        document.addEventListener("DOMContentLoaded",createFormEventListener);
+        return true;
+    } else {
+        alert("The ticket was not purchased");
+        window.history.back();
+        return false;
+    }
+}
 
 function createFormEventListener() { //Laver eventet der lytter til hvornår vi henter formen
     const formObject = document.getElementById("assign");

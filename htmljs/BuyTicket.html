@@ -28,7 +28,7 @@
     <h1>Buy Ticket</h1>
 
     <div>
-        <form id="assign" action="http://localhost:8080/saveTicket">
+        <form id="assign" action="http://localhost:8080/saveTicket"onsubmit="validateForm();">
             <div>
                 <label>Select movies:
                     <select id="moviedropdown" required>
@@ -45,9 +45,13 @@
             </div>
             <div>
                 <label>Select seat and row:
-                    <input type="number" name="seatNumber" placeholder="Seatnumber">
-                    <input type="text" name="seatRow" placeholder="Seatrow">
+                    <input id="seatNumber" type="number" name="seatNumber" placeholder="Seatnumber">
+                    <input id="seatRow" type="text" name="seatRow" placeholder="Seatrow">
                 </label>
+            </div>
+            <div id="newInputFields">
+                <button type="button" id="pbCreateMoreTicketInputs">Add more seats</button>
+                <br>
             </div>
             <div id="footer">
                 <br>
@@ -60,5 +64,6 @@
     <script src="jsFetch/fetchMovies.js"></script>
     <script src="jsFetch/fetchScreenings.js"></script>
     <script src="jsCreateObject/createTicket.js"></script>
+
 </body>
 </html>
