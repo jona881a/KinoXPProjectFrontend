@@ -5,6 +5,7 @@
     <title>Screenings</title>
     <link rel="stylesheet" type="text/css" href="css/Topbar.css">
     <link rel="stylesheet" type="text/css" href="css/Tabel.css">
+    <link rel="stylesheet" type="text/css" href="css/dropdownSearch.css">
 </head>
 <body>
 <div class = "header">
@@ -23,12 +24,21 @@
 </div>
 
 
+
 <h1 class="pageTitle">Coming Screenings</h1><br/>
-<div class="createBtn">
-    <a href="/KinoXPProjectFrontend/htmljs/CreateScreening.html">
-        <button class="btn-create">Create new Screening</button><br/>
-    </a>
+<div>
+    <div class="createBtn">
+        <a href="/KinoXPProjectFrontend/htmljs/CreateScreening.html">
+
+            <button class="btn-create">Create new Screening</button><br/>
+
+        </a>
+    </div>
+    <div class="screeningDropdown">
+        <input type="text" id="myInput" onkeyup="searchDropDown()" placeholder="Search for screening.." title="Type in a name">
+    </div>
 </div>
+
 
 <table class="table" id="screeningsTable">
     <thead>
