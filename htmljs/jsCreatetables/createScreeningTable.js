@@ -71,13 +71,13 @@ function addRow(screening) {
     pbEdit.type = "button";
     pbEdit.setAttribute("value", "Edit screening");
 
-    function redirect(){
-       const url = "/KinoXPProjectFrontend/htmljs/EditScreening.html";
+
+    pbEdit.onclick = function(){
+        localStorage.setItem("screeningID",screening.screeningID);
+
+        const url = "/KinoXPProjectFrontend/htmljs/EditScreening.html";
         window.location.href = url;
     }
-    pbEdit.addEventListener("click",redirect);
-
-
 
     cell13.appendChild(pbEdit);
 

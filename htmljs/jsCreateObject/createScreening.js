@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded",createFormEventListener);
 function createFormEventListener() { //Laver eventet der lytter til hvornår vi henter formen
     const formObject = document.getElementById("assign");
     formObject.addEventListener("submit",handleScreeningsSubmit);
+
 }
 
 async function handleScreeningsSubmit(event) {
@@ -43,6 +44,8 @@ async function handleScreeningsSubmit(event) {
     } catch(error) {
         alert(error.message);
     }
+
+    window.location.href = "/KinoXPProjectFrontend/htmljs/Screenings.html";
 }
 
 async function insertScreeningInBackend(url, formData) {

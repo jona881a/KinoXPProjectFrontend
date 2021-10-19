@@ -38,12 +38,12 @@
     <tr>
         <td>
             <label>
-                <input class="dates" type="datetime-local" name="movieStartDateAndTime" placeholder="Start time" required>
+                <input id="editDateStart" class="dates" type="datetime-local" name="movieStartDateAndTime" placeholder="Start time" required>
             </label>
         </td>
         <td>
             <label>
-                <input class="dates" type="datetime-local" name="movieStartDateAndTime" placeholder="End time" required>
+                <input id="editDateEnd" class="dates" type="datetime-local" name="movieStartDateAndTime" placeholder="End time" required>
             </label>
         </td>
 
@@ -56,17 +56,17 @@
         </td>
         <td>
             <label>
-                <input type="number" name="roomNumber" required>
+                <input id="editRoomNumber" type="number" name="roomNumber" required>
             </label>
         </td>
         <td>
             <label>
-                <input type="number" name="pricePrSeat" required>
+                <input id="editPrice" type="number" name="pricePrSeat" required>
             </label>
         </td>
         <td>
             <label>
-                <button type="submit" title="Updates Screening">Update</button>
+                <button id="editUpdateScreening" type="submit" title="Updates Screening">Update</button>
             </label>
         </td>
     </tr>
@@ -74,6 +74,7 @@
 </table>
 </form>
 
+<script src="jsFetch/fetchScreenings.js"></script>
 <script src="jsFetch/fetchMovies.js"></script>
 <script src="jsEdit/EditScreening.js"></script>
 </body>
