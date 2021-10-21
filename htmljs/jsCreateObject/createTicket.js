@@ -10,7 +10,8 @@ async function loadDatabaseData() {
     await fetchMoviesFromDB(); //Henter film fra database
     await fetchScreeningsFromDB(); //Henter screenings fra dataase
     createMovieDropDown(); //laver dropdown af movies
-    setBoundariesInForm();
+    //setBoundariesInForm();
+    setBoundariesInForm()
 }
 
 
@@ -55,43 +56,6 @@ function setBoundariesInForm() {
     maxSeatVal.setAttribute("max","20");
 }
 
-function addMoreTickets() {
-    const seatNumberInput = document.createElement("input");
-    const seatRowInput = document.createElement("input");
-    const breakTag = document.createElement("br");
-    const newInputDiv = document.getElementById("newInputFields");
-
-    seatNumberInput.type = "number";
-    seatRowInput.type = "text";
-    
-    seatNumberInput.id = "seatNumber";
-    
-    seatNumberInput.placeholder = "Seatnumber";
-    seatRowInput.placeholder = "Seatrow";
-
-    newInputDiv.appendChild(breakTag);
-    newInputDiv.appendChild(seatNumberInput);
-    newInputDiv.appendChild(seatRowInput);
-    newInputDiv.appendChild(breakTag);
-    /*
-}
-    function createATags() {
-        out("create atags");
-        for (const komKey of kommuneMap.keys()) {
-            const kom1 = kommuneMap.get(komKey);
-            const atag = document.createElement("a");
-            atag.setAttribute("href", kom1.kommuneHref);
-            atag.innerText = kom1.kommuneNavn;
-            komtag.appendChild(atag);
-            const brtag = document.createElement("br");
-            komtag.appendChild(brtag);
-        }
-
-     */
-}
-const pbCreateMoreTicketInputs = document.getElementById("pbCreateMoreTicketInputs");
-pbCreateMoreTicketInputs.addEventListener("click",addMoreTickets);
-
 /*
  * Håndtering af formen
  */
@@ -99,7 +63,6 @@ pbCreateMoreTicketInputs.addEventListener("click",addMoreTickets);
 function validateForm() {
     if (confirm("Please make sure you're ticket is correct before making the reservation")) {
         alert("The ticket was purchased");
-        document.addEventListener("DOMContentLoaded",createFormEventListener);
         return true;
     } else {
         alert("The ticket was not purchased");
@@ -108,6 +71,8 @@ function validateForm() {
     }
 }
 
+document.addEventListener("DOMContentLoaded",createFormEventListener);
+
 function createFormEventListener() { //Laver eventet der lytter til hvornår vi henter formen
     const formObject = document.getElementById("assign");
     formObject.addEventListener("submit",handleScreeningsSubmit);
@@ -115,15 +80,16 @@ function createFormEventListener() { //Laver eventet der lytter til hvornår vi 
 
 async function handleScreeningsSubmit(event) {
     event.preventDefault();
+    if(validateForm()) {
+        const form = event.currentTarget; //Fortæller hvilket event (submittet) som vi skal tage fra
+        const url = form.action; //Tager det url som står i action i formheaderen
 
-    const form = event.currentTarget; //Fortæller hvilket event (submittet) som vi skal tage fra
-    const url = form.action; //Tager det url som står i action i formheaderen
-
-    try {
-        const formData = new FormData(form);
-        await insertScreeningInBackend(url,formData);
-    } catch(error) {
-        alert(error.message);
+        try {
+            const formData = new FormData(form);
+            await insertScreeningInBackend(url,formData);
+        } catch(error) {
+            alert(error.message);
+        }
     }
 }
 
